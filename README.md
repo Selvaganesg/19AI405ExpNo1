@@ -40,7 +40,7 @@
 <p>Treat unhealthy patients in each room. And check for the unhealthy patients in random room</p>
 <h3>STEP 5:</h3>
 
- ##PROGRAM
+ PROGRAM
 ```
 import random
 ROOMS = ["Room 1", "Room 2"]
@@ -82,7 +82,7 @@ print(f"Final Performance Score: {performance_score}")
 print("Environment State:", environment)
 
 ```
-##<h3>OUTPUT</h3>:
+<h3>OUTPUT</h3>:
 
 <img width="834" height="307" alt="image" src="https://github.com/user-attachments/assets/86a458e0-061b-49e4-acb0-c2a13e7748fc" />
 

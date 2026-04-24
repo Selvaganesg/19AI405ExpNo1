@@ -84,12 +84,8 @@ print("Environment State:", environment)
 ```
 <h3>OUTPUT</h3>:
 
-<img width="834" height="307" alt="image" src="https://github.com/user-attachments/assets/86a458e0-061b-49e4-acb0-c2a13e7748fc" />
+<img width="834" height="307" alt="image" src="https://github.com/user-attachments/assets/9350c5df-6e35-4dca-81c6-2297c670a2a6" />
 
-
-RESULT:
-
-Thus the AI agent is developed successfully
 
 RESULT:
 

@@ -42,8 +42,11 @@
 <p>Measure the performance parameters: For each treatment performance incremented, for each movement performance decremented</p>
 ```
 import random
+
 ROOMS = ["Room 1", "Room 2"]
+
 FEVER_THRESHOLD = 98.5
+
 environment = {
     "Room 1": round(random.uniform(97.0, 101.0), 1),
     "Room 2": round(random.uniform(97.0, 101.0), 1)
@@ -79,7 +82,7 @@ for room in ROOMS:
 print("\nSimulation Complete!")
 print(f"Final Performance Score: {performance_score}")
 print("Environment State:", environment)
-```
+
 
 <h3>OUTPUT</h3>:
 
@@ -122,7 +125,7 @@ for room in ROOMS:
 print("\nSimulation Complete!")
 print(f"Final Performance Score: {performance_score}")
 print("Environment State:", environment)
-```
+
 
 <h3>OUTPUT</h3>:
 

@@ -1,50 +1,38 @@
 import random
+ROOMS = ["Room 1", "Room 2"]
+FEVER_THRESHOLD = 98.5
+environment = {
+    "Room 1": round(random.uniform(97.0, 101.0), 1),
+    "Room 2": round(random.uniform(97.0, 101.0), 1)
+}
+agent_location = "Room 1"
+performance_score = 0
 
-class HealthMonitoringAgent:
-    def __init__(self, patient_data):
-        self.patient_data = patient_data
+def check_temperature(room):
+    temp = environment[room]
+    print(f"Checking {room}... Patient temperature: {temp}°F")
+    return temp
 
-    def monitor_health(self):
-        while True:
-            current_health_state = self.sensors.get_health_state()
-            action = self.choose_action(current_health_state)
-            self.actuators.perform_action(action)
-            if self.choose_action(current_health_state)=="No specific action needed":
-                break
+def treat_patient(room):
+    global performance_score
+    print(f"Treating patient in {room}... ")
+    performance_score += 1 
 
-    def choose_action(self, current_health_state):
-        # Example: A simple rule-based system for decision-making
-        if current_health_state['heart_rate'] > 120:
-            return "Alert healthcare provider: High heart rate detected"
-        elif current_health_state['blood_pressure'] > 140:
-            return "Alert healthcare provider: High blood pressure detected"
-        elif current_health_state['temperature'] > 38:
-            return "Recommend rest and monitor temperature"
-        else:
-            return "No specific action needed"
+def move_to(room):
+    global agent_location, performance_score
+    if agent_location != room:
+        print(f"Moving from {agent_location} to {room}... ")
+        agent_location = room
+        performance_score -= 1  
+print("Medicine Prescribing Agent Simulation Started \n")
 
-class HealthSensors:
-    def get_health_state(self):
-        # Example: Simulate health data retrieval (replace with real data in a practical scenario)
-        return {
-            'heart_rate': random.randint(60, 150),
-            'blood_pressure': random.randint(90, 160),
-            'temperature': random.uniform(36.0, 38.5)
-        }
-
-class HealthActuators:
-    def perform_action(self, action):
-        # Example: Print or log the action (in a real scenario, this might involve more complex actions)
-        print(action)
-
-if __name__ == "__main__":
-    patient_data = {'patient_id': 123, 'name': 'John Doe', 'age': 35}
-    
-    health_sensors = HealthSensors()
-    health_actuators = HealthActuators()
-    
-    health_monitoring_agent = HealthMonitoringAgent(patient_data)
-    health_monitoring_agent.sensors = health_sensors
-    health_monitoring_agent.actuators = health_actuators
-    
-    health_monitoring_agent.monitor_health()
+for room in ROOMS:
+    move_to(room)
+    temp = check_temperature(room)
+    if temp > FEVER_THRESHOLD:
+        treat_patient(room)
+    else:
+        print(f"No treatment needed in {room}.\n")
+print("\nSimulation Complete!")
+print(f"Final Performance Score: {performance_score}")
+print("Environment State:", environment)

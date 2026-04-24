@@ -39,10 +39,9 @@
 <h3>STEP 4:Implementing the AI agent:</h3>
 <p>Treat unhealthy patients in each room. And check for the unhealthy patients in random room</p>
 <h3>STEP 5:</h3>
-<p>Measure the performance parameters: For each treatment performance incremented, for each movement performance decremented</p>
-```
-PROGRAM
 
+ ##PROGRAM
+```
 import random
 ROOMS = ["Room 1", "Room 2"]
 FEVER_THRESHOLD = 98.5
@@ -83,7 +82,7 @@ print(f"Final Performance Score: {performance_score}")
 print("Environment State:", environment)
 
 ```
-<h3>OUTPUT</h3>:
+##<h3>OUTPUT</h3>:
 
 <img width="834" height="307" alt="image" src="https://github.com/user-attachments/assets/86a458e0-061b-49e4-acb0-c2a13e7748fc" />
 
